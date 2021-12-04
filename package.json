@@ -6,9 +6,9 @@
   "author": "tomato <h20333@qq.com>",
   "license": "MIT",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "deploy":"zsh deploy.sh"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
   },
   "devDependencies": {
     "vuepress": "^2.0.0-beta.27"
