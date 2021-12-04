@@ -3,6 +3,7 @@ module.exports = {
   lang: 'zh-CN',
   title: 'Tomato\'Blog',
   description: '每天进步一点点',
+  base: '/blog/' ,
 
   // 主题配置 主题配置将会被 VuePress 主题来处理，所以它取决于你使用的主题是什么。
   themeConfig: {
