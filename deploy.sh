@@ -23,3 +23,7 @@ git push -f git@github.com:tomato-wu/tomato-wu.github.io.git master
 # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
 
 cd -
+
+git add .
+git commit -m "发布新文章"
+git push origin
