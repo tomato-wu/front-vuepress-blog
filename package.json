@@ -1,0 +1,16 @@
+{
+  "name": "my-blog",
+  "version": "1.0.0",
+  "description": "使用vuepress搭建个人博客网站",
+  "main": "index.js",
+  "author": "tomato <h20333@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy":"zsh deploy.sh"
+  },
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.27"
+  }
+}
