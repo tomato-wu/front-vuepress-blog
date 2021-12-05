@@ -5,6 +5,11 @@ module.exports = {
   description: '每天进步一点点',
   base: './' ,
 
+
+  plugins: {
+    '@vuepress/back-to-top': true
+},
+
   // 主题配置 主题配置将会被 VuePress 主题来处理，所以它取决于你使用的主题是什么。
   themeConfig: {
     logo: 'https://vuejs.org/images/logo.png',

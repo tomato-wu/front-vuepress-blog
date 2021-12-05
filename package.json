@@ -11,6 +11,14 @@
     "deploy": "bash deploy.sh"
   },
   "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^2.0.0-beta.27",
+    "@vuepress/plugin-back-to-top": "^1.8.2",
+    "@vuepress/plugin-debug": "^2.0.0-beta.27",
+    "@vuepress/plugin-docsearch": "^2.0.0-beta.27",
+    "@vuepress/plugin-prismjs": "^2.0.0-beta.27",
+    "@vuepress/plugin-search": "^2.0.0-beta.27",
+    "@vuepress/plugin-shiki": "^2.0.0-beta.27",
+    "@vuepress/plugin-toc": "^2.0.0-beta.27",
     "vuepress": "^2.0.0-beta.27"
   }
 }
