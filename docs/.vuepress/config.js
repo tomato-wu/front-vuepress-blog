@@ -32,8 +32,8 @@ module.exports = {
             link:'/eslintPage/eslintConfig.md'
           },
           {
-            text:'eslint',
-            link:'/eslint/'
+            text:'git和github',
+            link:'/gitPage/gitUse.md'
           }
         ],
       },
