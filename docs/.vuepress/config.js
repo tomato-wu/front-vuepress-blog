@@ -3,7 +3,7 @@ module.exports = {
   lang: 'zh-CN',
   title: 'Tomato\'Blog',
   description: '每天进步一点点',
-  base: './' ,
+  base: '/' ,
 
   // 主题配置 主题配置将会被 VuePress 主题来处理，所以它取决于你使用的主题是什么。
   themeConfig: {
@@ -29,11 +29,15 @@ module.exports = {
         children: [
           {
             text: 'eslint配置',
-            link:'/eslintPage/eslintConfig.md'
+            link:'/engineering/eslintConfig.md'
           },
           {
             text:'git和github',
-            link:'/gitPage/gitUse.md'
+            link:'/engineering/gitUse.md'
+          },
+          {
+            text:'vscode插件推荐',
+            link:'/engineering/vscodePlugins.md'
           }
         ],
       },
