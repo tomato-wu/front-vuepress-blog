@@ -7,7 +7,7 @@ module.exports = {
 
   // 主题配置 主题配置将会被 VuePress 主题来处理，所以它取决于你使用的主题是什么。
   themeConfig: {
-    logo: 'https://vuejs.org/images/logo.png',
+    logo: './public/1.jpg',
     navbar: [
       // web前端面试题====================================================================
       {
