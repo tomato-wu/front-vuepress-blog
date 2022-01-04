@@ -11,7 +11,7 @@ module.exports = {
     navbar: [
       // javaScript相关的模块====================================================================
       {
-        text: 'js',
+        text: '面试',
         children: [
           {
             text: 'SubGroup',
@@ -25,7 +25,7 @@ module.exports = {
       },
       // 前端模块化相关的模块====================================================================
       {
-        text: '前端工程化',
+        text: 'vue',
         children: [
           {
             text: 'eslint配置',
@@ -44,15 +44,19 @@ module.exports = {
       // vue相关的模块====================================================================
 
       {
-        text: 'vue',
+        text: 'js/ts',
         children: [
           {
-            text: 'SubGroup',
-            children: ['/group/sub/foo.md', '/group/sub/bar.md'],
+            text: 'eslint配置',
+            link:'/engineering/eslintConfig.md'
           },
           {
-            text:'eslint',
-            link:'/eslint/'
+            text:'git和github',
+            link:'/engineering/gitUse.md'
+          },
+          {
+            text:'vscode插件推荐',
+            link:'/engineering/vscodePlugins.md'
           }
         ],
       },
