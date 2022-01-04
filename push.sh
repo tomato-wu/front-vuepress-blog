@@ -5,7 +5,7 @@ set -e
 
 
 git add .
-git commit -m '修改报错'
+git commit -m '小改动'
 git push origin
 
 cd -
