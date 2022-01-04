@@ -9,13 +9,13 @@ module.exports = {
   themeConfig: {
     logo: 'https://vuejs.org/images/logo.png',
     navbar: [
-      // javaScript相关的模块====================================================================
+      // web前端面试题====================================================================
       {
         text: '面试',
         children: [
           {
-            text: 'SubGroup',
-            children: ['/group/sub/foo.md', '/group/sub/bar.md'],
+            text: 'web前端面试题',
+            link:"/eslint/"
           },
           {
             text:'eslint',
@@ -23,40 +23,41 @@ module.exports = {
           }
         ],
       },
-      // 前端模块化相关的模块====================================================================
+      // vue====================================================================
       {
         text: 'vue',
         children: [
           {
-            text: 'eslint配置',
-            link:'/engineering/eslintConfig.md'
+            text: 'ant-design-vue',
+            link:'/vue/ant-design-vue.md'
           },
           {
-            text:'git和github',
-            link:'/engineering/gitUse.md'
+            text: 'Vue组件通信方式 props/$emit',
+            link:'/vue/PropsAndEmit.md'
           },
           {
-            text:'vscode插件推荐',
-            link:'/engineering/vscodePlugins.md'
+            text: 'vue3+vite+ts搭建项目',
+            link:'/vue/CreateProject.md'
           }
+        
         ],
       },
-      // vue相关的模块====================================================================
+      // js/ts====================================================================
 
       {
         text: 'js/ts',
         children: [
           {
             text: 'eslint配置',
-            link:'/engineering/eslintConfig.md'
+            link:'/other/eslintConfig.md'
           },
           {
             text:'git和github',
-            link:'/engineering/gitUse.md'
+            link:'/other/gitUse.md'
           },
           {
             text:'vscode插件推荐',
-            link:'/engineering/vscodePlugins.md'
+            link:'/other/vscodePlugins.md'
           }
         ],
       },
@@ -66,16 +67,39 @@ module.exports = {
         link: '/foo/',
       },
       {
-        text: 'vscode',
-        link: '/foo/',
+        text: 'css',
+        children:[
+          {
+            text:"css定位",
+            link:'/css/Positioning.md'
+          }
+        ]
       },
+      // flutter相关的模块====================================================================
       {
         text: '我的CSDN',
         link: 'https://i.csdn.net/#/user-center/profile?spm=1000.2115.3001.5111',
       },
       {
         text: '其他',
-        children: ['/group/foo.md', '/group/bar.md'],
+        children: [
+          {
+            text: 'eslint配置',
+            link:'/other/eslintConfig.md'
+          },
+          {
+            text:'git和github',
+            link:'/other/gitUse.md'
+          },
+          {
+            text:'vscode插件推荐',
+            link:'/other/vscodePlugins.md'
+          },
+          {
+            text:'linux学习',
+            link:'/other/linuxStudy.md'
+          }
+        ],
       },
     ],
   },

@@ -78,7 +78,7 @@ cat ~/.ssh/id_rsa.pub
 ```
 
 
-## git常用命令
+## (2)git常用命令
 
 ```cpp
 git status    //查看当前状态 
@@ -90,7 +90,7 @@ git clone 地址     //克隆GitHub上的仓库到本地   ,拷贝一份远程�
 git clone 地址 -b 分支名称    //克隆某个特定分支
 
 ```
-## git的分支管理
+## (3)git的分支管理
 git remote -v  列出详细信息，在每一个名字后面列出其远程url，此时， -v 选项(译注:此为 –verbose 的简写,取首字母),显示对应的克隆地址。![在这里插入图片描述](https://img-blog.csdnimg.cn/2020100820483635.png#pic_center)
 
 ```cpp
@@ -126,50 +126,63 @@ git push --set-upstream origin branch_name
 //这样就可以自动在远程创建一个 branch_name 分支，然后本地分支会 track 该分支。
 //后面再对该分支使用 push 和 pull 就自动同步。
 
-git push --set-upstream origin branch_name
 
-//如果是多人开发的话 需要把远程master上的代码pull下来
-git pull    
-//然后合并冲突，然后再git add .
-然后再git commit -m "balabala"
-然后再git push origin <name>   //提交到远程仓库
+
+```
+## 多人开发场景
+
+```cpp
+git pull     //如果是多人开发的话 需要把远程master上的代码pull下来
+//然后合并冲突，然后再
+
+git add .
+git commit -m "balabala"
+git push origin <name>   //提交到远程仓库
 
 git merge dev  //将dev分支和现在分支的开发历史合并在一起，再自己手动解决分支
 ```
+## 修改分支名字（分支名字敲错了或者不满意）
+
+```cpp
+git branch -m <oldbranch> <newbranch>
+```
+
 ## 如何将本地的项目上传到GitHub上
 
 
-```bash
+```cpp
 git init  //把这个文件夹变成Git可管理的仓库
 
 git add .
 git commit -m "aaa"
-在Github上创建好Git仓库之后我们就可以和本地仓库进行关联了
-$ git remote add origin https://github.com/guyibang/TEST2.git
-或者
-$ git remote add origin git@github.com:GDUFS-IIIP-DEV/yunyin.git
 
-git push -u origin master
-// 由于新建的远程仓库是空的，所以要加上-u这个参数，
-//等远程仓库里面有了内容之后，下次再从本地库上传内容的时候只需下面这样就可以了
 
-git push origin master
+//在Github上创建好Git仓库之后我们就可以和本地仓库进行关联了
+ git remote add origin https://github.com/guyibang/TEST2.git
+//或者
+ git remote add origin git@github.com:GDUFS-IIIP-DEV/yunyin.git
 
-当github上的仓库不是空的时，即在GitHub上创建仓库的时候勾选了创建README.md文件时，要先pull
-git pull --rebase origin master
+git push -u origin master // 由于新建的远程仓库是空的，所以要加上-u这个参数
+
+git push origin master //等远程仓库里面有了内容之后，下次再从本地库上传内容的时候只需这样就可以了
+
+
+git pull --rebase origin master //当github上的仓库不是空的时，即在GitHub上创建仓库的时候勾选了创建README.md文件时，要先pull
 
 git log --oneline --graph //以简洁的方式显示 git 记录
+
+
 git log -最近提交的次数 //查看最近几次的 git 记录
+
+
 Git rm 文件名 --cached //某个文件不再被 Git 控制
-Git mv hello.txt world.txt：更新文件名
-
-Git checkout 文件名：找回已删除的文件： 
-
-Git reset master^:撤销某次 commit
 
 
+Git mv hello.txt world.txt //更新文件名
 
+Git checkout 文件名 //找回已删除的文件： 
 
+Git reset master^ //撤销某次 commit
 
 ```
 
@@ -177,31 +190,33 @@ Git reset master^:撤销某次 commit
 
 ## 项目开发中使用git的标准
 
-master分支：只有项目经理才能合并，是项目的最终版
-dev开发分支：最后要合并到master分支上的，我们在开发分支上操作
+> master分支：只有项目经理才能合并，是项目的最终版 
+> 
+> dev开发分支：最后要合并到master分支上的，我们在开发分支上操作
 
 开发：
 先拉取dev分支到本地
-然后在本地再建新分支开发新功能：比如新建feature分支，在feature分支上写代码，运行没问题后再合并到dev分支上，dev分支检查下有没有问题，没有问题就可以推送到远程
+然后在本地再建新分支开发新功能：
+
+比如新建feature分支，在feature分支上写代码，运行没问题后再合并到dev分支上，dev分支检查下有没有问题，没有问题就可以推送到远程
 
 ```cpp
-怎么合并分支，首先，我们要切换到dev分支上，然后输入
-git merge feature
-把feature分支的代码合并到dev上
+//怎么合并分支，首先，我们要切换到dev分支上，然后输入
+git merge feature //把feature分支的代码合并到dev
 ```
 其他命令
 ```cpp
-更新远程分支列表
-git remote update origin --prune
 
-查看所有分支
-git branch -a
+git remote update origin --prune //更新远程分支列表
 
-删除远程分支Chapater6
-git push origin --delete Chapater6
 
-删除本地分支 Chapater6
-git branch -d  Chapater6
+git branch -a //查看所有分支
+
+
+git push origin --delete Chapater6 //删除远程分支Chapater6
+
+
+git branch -d  Chapater6 //删除本地分支 Chapater6
 ```
 
 测试分支：
@@ -216,3 +231,36 @@ git log --pretty=oneline //简化
 git reset --hard id //根据 id 回退到指定的版本；
 ```
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/d0e3ae92ee1d4876ad9413fcf71a7a80.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA55Wq6IyEd2t5,size_20,color_FFFFFF,t_70,g_se,x_16)
+## git 代码提交规范
+在多人协作的背景下，git 仓库和 workflow 的作用很重要。而对于 commit 提交的信息说明存在一定规范，现使用 commitlint + husky 规范 git commit -m "" 中的描述信息。我们都知道，在使用 git commit 时，git 会提示我们填入此次提交的信息。可不要小看了这些 commit，团队中规范了 commit 可以更清晰的查看每一次代码提交记录，还可以根据自定义的规则，自动生成 changeLog 文件。
+提交格式（注意冒号后面有空格）：
+
+```typescript
+<type>[optional scope]: <description>
+```
+
+复制代码
+
+```typescript
+type ：用于表明我们这次提交的改动类型。
+optional scope：可选，用于标识此次提交主要涉及到代码中哪个模块。
+description：一句话描述此次提交的主要内容，做到言简意赅。
+```
+
+Type 类型
+
+```typescript
+//build：编译相关的修改，例如发布版本、对项目构建或者依赖的改动
+//chore：其他修改, 比如改变构建流程、或者增加依赖库、工具等
+//ci：持续集成修改
+//docs：文档修改
+//feat：新特性、新功能
+//fix：修改bug
+//perf：优化相关，比如提升性能、体验
+//refactor：代码重构
+//revert：回滚到上一个版本
+//style：代码格式修改, 注意不是 css 修改
+//test：测试用例修改
+```
+
+关于 commitlint + husky 的配置文章有很多，大同小异，请根据自己的实际情况配置。
